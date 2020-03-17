@@ -1,0 +1,60 @@
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <title><%= config.title %></title>
+  <%- css('css/style.css') %>
+</head>
+
+<body>
+  <div id="user-info">
+    <div class="background">
+      <img src="https://upload.jianshu.io/user/background_image/e4659550-935f-4900-bf97-197deab823e9?imageMogr2/auto-orient/strip|imageView2/1/w/600/h/240">
+    </div>
+    <div class="avatar">
+      <img src="https://upload.jianshu.io/users/upload_avatars/3750332/77e3a7d9-a1a3-43da-9ea0-4728826017ba.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/180/h/180" alt="">
+    </div>
+    <div class="author-info">
+      <div class="name"><%= config.author %></div>
+      <div class="follow-meta">
+        <span>文章数</span>
+        <span>字数</span>
+        <span>天数</span>
+      </div>
+    </div>
+    <div class="intro">
+      <%= config.author_intro %>
+    </div>
+
+  </div>
+  <hr />
+
+
+  <div class="flow-list-container">
+    <% page.posts.each(function (post) { %>
+    <ul class="flow-list-ul">
+      <li class="note-flow">
+        <a class="content" href="<%- url_for(post.path) %>">
+          <div class="summary">
+            <h6 class="title"><%= post.title %></h6>
+            <p class="abstract">
+              <%- post.excerpt %>
+            </p>
+            <div class="meta">
+              <span class="time"><%- date(post.date, "YYYY-MM-DD") %></span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <!-- <div class="post-meta">
+        <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+      </div> -->
+
+    </ul>
+    <% }) %>
+  </div>
+
+</body>
+
+</html>

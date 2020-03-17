@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title><%= page.title %> | <%= config.title %></title>
+    
+    <%- css('css/post.css') %>
+</head>
+
+<body>
+    <div id="book-nav">
+        <button class="open-chapter">
+            目录
+        </button>
+        <a class="book-info" href="/">
+            <span class="nameoneline">化学小子的前端实验册</span>
+        </a>
+    </div>
+    <article class="post">
+        <div class="post-title">
+            <h2 class="title"><%= page.title %></h2>
+        </div>
+        <div class="article-info">
+            <div class="meta">
+                <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+            </div>
+        </div>
+        <div class="note-content">
+            <%- page.content %>
+        </div>
+    </article>
+
+</body>
+
+</html>
