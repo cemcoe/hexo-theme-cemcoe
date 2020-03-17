@@ -18,9 +18,7 @@
     <div class="author-info">
       <div class="name"><%= config.author %></div>
       <div class="follow-meta">
-        <span>文章数</span>
-        <span>字数</span>
-        <span>天数</span>
+        <span>文章数: <%= site.posts.length %></span>
       </div>
     </div>
     <div class="intro">
@@ -42,6 +40,11 @@
               <%- post.excerpt %>
             </p>
             <div class="meta">
+
+              <% post.tags.data.forEach(function (tag) { %>
+                <span><%- tag.name %></span>
+              <% }) %>
+
               <span class="time"><%- date(post.date, "YYYY-MM-DD") %></span>
             </div>
           </div>

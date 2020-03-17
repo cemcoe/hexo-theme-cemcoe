@@ -23,11 +23,16 @@
         </div>
         <div class="article-info">
             <div class="meta">
+
+                <% page.tags.data.forEach(function (tag) { %>
+                    <span><%- tag.name %></span>
+                <% }) %>
+
                 <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
             </div>
         </div>
         <div class="note-content">
-            <%- page.content %>
+            <%- page.more %>
         </div>
     </article>
 
