@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    
+
     <div id="book-nav">
         <button class="open-chapter">
             目录
@@ -34,18 +34,26 @@
         <div class="note-content">
             <%- page.more %>
         </div>
+        <!-- <% console.log(page.prev) %> -->
     </article>
     <!-- 我是章节目录  -->
-    <div class="chapter">
+    <div id="book-chapters">
+        <div class="book-chapters-header">
+            <span class="title">目录(共<%- site.posts.length %>篇)</span>
+            <button class="reset">切换顺序</button>
+        </div>
         --------
 
-        <!-- <% console.log(site.posts.data) %> -->
+        <%# console.log(site.posts.data) %>
 
         <% site.posts.data.forEach( function(post){ %>
-            <ul>
-                <li><a href="<%- url_for(post.path) %>"><%- post.title %></a></li>
-            </ul>
+        <ul>
+            <li><a href="<%- url_for(post.path) %>"><%- post.order %>---<%- post.title %></a></li>
+        </ul>
         <% }) %>
+        <div class="book-chapters-drawer-footer">
+            <a href="#">前往作品主页</a>
+        </div>
 
 
     </div>
