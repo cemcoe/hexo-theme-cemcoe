@@ -4,10 +4,12 @@
 }
 a {
     text-decoration: none;
-    color: #000;
+    color: rgb(247, 22, 191);
 }
 
-
+.nameoneline {
+    padding-left: 8px;
+}
 #book-nav {
     vertical-align: middle;
     position: fixed;
@@ -28,6 +30,14 @@ a {
     padding-right: 4px;
 
     color: rgb(226, 12, 12);
+}
+
+
+.tags {
+    background-color: #f40;
+    padding: 2px;
+    color: #fff;
+    border-radius: 2px;
 }
 
 .post {

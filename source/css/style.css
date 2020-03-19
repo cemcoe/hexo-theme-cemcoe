@@ -87,6 +87,11 @@ hr {
     font-weight: 700;
     padding-bottom: 6px;
 }
+.note-flow .summary .abstract {
+    font-size: 12px;
+    color: #000;
+    opacity: .6;
+}
 
 .meta {
     font-size: 12px;

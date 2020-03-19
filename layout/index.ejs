@@ -10,10 +10,13 @@
 <body>
   <div id="user-info">
     <div class="background">
-      <img src="https://upload.jianshu.io/user/background_image/e4659550-935f-4900-bf97-197deab823e9?imageMogr2/auto-orient/strip|imageView2/1/w/600/h/240">
+      <img
+        src="https://upload.jianshu.io/user/background_image/e4659550-935f-4900-bf97-197deab823e9?imageMogr2/auto-orient/strip|imageView2/1/w/600/h/240">
     </div>
     <div class="avatar">
-      <img src="https://upload.jianshu.io/users/upload_avatars/3750332/77e3a7d9-a1a3-43da-9ea0-4728826017ba.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/180/h/180" alt="">
+      <img
+        src="https://upload.jianshu.io/users/upload_avatars/3750332/77e3a7d9-a1a3-43da-9ea0-4728826017ba.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/180/h/180"
+        alt="">
     </div>
     <div class="author-info">
       <div class="name"><%= config.author %></div>
@@ -36,24 +39,21 @@
         <a class="content" href="<%- url_for(post.path) %>">
           <div class="summary">
             <h6 class="title"><%= post.title %></h6>
-            <p class="abstract">
+            <div class="abstract">
               <%- post.excerpt %>
-            </p>
+            </div>
             <div class="meta">
+              <span><%= post.order %></span>
 
               <% post.tags.data.forEach(function (tag) { %>
-                <span><%- tag.name %></span>
+              <span><%- tag.name %></span>
               <% }) %>
 
-              <span class="time"><%- date(post.date, "YYYY-MM-DD") %></span>
+              <span class="time"><%- date(post.date, "MM-DD") %></span>
             </div>
           </div>
         </a>
       </li>
-      <!-- <div class="post-meta">
-        <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
-      </div> -->
-
     </ul>
     <% }) %>
   </div>

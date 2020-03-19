@@ -4,11 +4,11 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title><%= page.title %> | <%= config.title %></title>
-    
     <%- css('css/post.css') %>
 </head>
 
 <body>
+    
     <div id="book-nav">
         <button class="open-chapter">
             目录
@@ -25,7 +25,7 @@
             <div class="meta">
 
                 <% page.tags.data.forEach(function (tag) { %>
-                    <span><%- tag.name %></span>
+                <span class="tags"><%- tag.name %></span>
                 <% }) %>
 
                 <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
@@ -35,6 +35,22 @@
             <%- page.more %>
         </div>
     </article>
+    <!-- 我是章节目录  -->
+    <div class="chapter">
+        --------
+
+        <!-- <% console.log(site.posts.data) %> -->
+
+        <% site.posts.data.forEach( function(post){ %>
+            <ul>
+                <li><a href="<%- url_for(post.path) %>"><%- post.title %></a></li>
+            </ul>
+        <% }) %>
+
+
+    </div>
+    <!-- 111 -->
+    <%- js('js/index.js') %>
 
 </body>
 
