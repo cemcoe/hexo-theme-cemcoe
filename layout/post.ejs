@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title><%= page.title %> | <%= config.title %></title>
-    <%- css('css/post.css') %>
+    <%- css('static/css/post.css') %>
 </head>
 
 <body>
@@ -32,9 +32,10 @@
             </div>
         </div>
         <div class="note-content">
-            <%- page.more %>
+            <%- page.content %>
+            <p>> 这里是 <%= config.author %> 连载 [化学小子的前端实验册] 的第 <%= page.order %> 篇，欢迎关注。</p>
+            <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
         </div>
-        <!-- <% console.log(page.prev) %> -->
     </article>
     <!-- 我是章节目录  -->
     <div id="book-chapters">
@@ -52,13 +53,13 @@
         </ul>
         <% }) %>
         <div class="book-chapters-drawer-footer">
-            <a href="#">前往作品主页</a>
+            <a href="/">前往作品主页</a>
         </div>
 
 
     </div>
     <!-- 111 -->
-    <%- js('js/index.js') %>
+    <%- js('static/js/index.js') %>
 
 </body>
 

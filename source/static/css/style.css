@@ -83,12 +83,12 @@ hr {
 }
 
 .note-flow .summary .title{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     padding-bottom: 6px;
 }
 .note-flow .summary .abstract {
-    font-size: 12px;
+    font-size: 18px;
     color: #000;
     opacity: .6;
 }
@@ -97,6 +97,7 @@ hr {
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
+    padding-top: 14px;
 }
 
 .meta span {
