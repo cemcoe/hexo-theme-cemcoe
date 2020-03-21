@@ -13,7 +13,7 @@
         <button class="open-chapter">
             目录
         </button>
-        <a class="book-info" href="/">
+        <a class="book-info" href="../../index.html">
             <span class="nameoneline">化学小子的前端实验册</span>
         </a>
     </div>
@@ -37,23 +37,22 @@
             <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
         </div>
     </article>
-    <!-- 我是章节目录  -->
+    <!-- 我是章节目录遮罩  -->
+    <div id="backdrop"></div>
+
     <div id="book-chapters">
         <div class="book-chapters-header">
             <span class="title">目录(共<%- site.posts.length %>篇)</span>
             <button class="reset">切换顺序</button>
         </div>
-        --------
-
-        <%# console.log(site.posts.data) %>
-
-        <% site.posts.data.forEach( function(post){ %>
         <ul>
-            <li><a href="<%- url_for(post.path) %>"><%- post.order %>---<%- post.title %></a></li>
+            <% site.posts.data.forEach( function(post){ %>
+            <li style="order: <%- post.order %>;"><a
+                    href="<%- url_for(post.path) %>"><%- post.order %>---<%- post.title %></a></li>
+            <% }) %>
         </ul>
-        <% }) %>
         <div class="book-chapters-drawer-footer">
-            <a href="/">前往作品主页</a>
+            <a href="../../index.html">前往作品主页</a>
         </div>
 
 
