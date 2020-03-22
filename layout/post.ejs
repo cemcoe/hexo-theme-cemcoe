@@ -4,7 +4,13 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title><%= page.title %> | <%= config.title %></title>
+    <meta name="description" content="<%- config.description %>"">
+    <meta name="author" content="<%- config.author %>">
+    <%- favicon_tag('static/imgs/favicon.ico') %>
+
     <%- css('static/css/post.css') %>
+    <%- css('static/js/prism/prism.css') %>
+    
 </head>
 
 <body>
@@ -47,7 +53,7 @@
         </div>
         <ul>
             <% site.posts.data.forEach( function(post){ %>
-            <li style="order: <%- post.order %>;"><a
+            <li style="order: '<%- post.order %>;'"><a
                     href="<%- url_for(post.path) %>"><%- post.order %>---<%- post.title %></a></li>
             <% }) %>
         </ul>
@@ -59,6 +65,7 @@
     </div>
     <!-- 111 -->
     <%- js('static/js/index.js') %>
+    <%- js('static/js/prism/prism.js') %>
 
 </body>
 
