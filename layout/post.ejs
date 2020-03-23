@@ -31,6 +31,7 @@
             <div class="meta">
 
                 <% page.tags.data.forEach(function (tag) { %>
+                    <% console.log(tag) %>
                 <span class="tags"><%- tag.name %></span>
                 <% }) %>
 
@@ -53,7 +54,7 @@
         </div>
         <ul>
             <% site.posts.data.forEach( function(post){ %>
-            <li style="order: '<%- post.order %>;'"><a
+            <li style="order: <%- post.order %>;"><a
                     href="<%- url_for(post.path) %>"><%- post.order %>---<%- post.title %></a></li>
             <% }) %>
         </ul>
