@@ -31,7 +31,6 @@
             <div class="meta">
 
                 <% page.tags.data.forEach(function (tag) { %>
-                    <% console.log(tag) %>
                 <span class="tags"><%- tag.name %></span>
                 <% }) %>
 
@@ -40,8 +39,10 @@
         </div>
         <div class="note-content">
             <%- page.content %>
-            <p>> 这里是 <%= config.author %> 连载 [化学小子的前端实验册] 的第 <%= page.order %> 篇，欢迎关注。</p>
-            <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+            <div class="recommend">
+                <p>> 这里是 <%= config.author %> 连载 [化学小子的前端实验册] 的第 <%= page.order %> 篇，欢迎关注。</p>
+                <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
+            </div> 
         </div>
     </article>
     <!-- 我是章节目录遮罩  -->
@@ -50,12 +51,16 @@
     <div id="book-chapters">
         <div class="book-chapters-header">
             <span class="title">目录(共<%- site.posts.length %>篇)</span>
-            <button class="reset">切换顺序</button>
+            <!-- <button class="reset">切换顺序</button> -->
         </div>
         <ul>
             <% site.posts.data.forEach( function(post){ %>
-            <li style="order: <%- post.order %>;"><a
-                    href="<%- url_for(post.path) %>"><%- post.order %>---<%- post.title %></a></li>
+            <li style="order: <%- post.order %>;">
+                <a href="<%- url_for(post.path) %>">
+                    <span class="book-chapters-order"><%- post.order %></span>
+                    <span class="book-chapters-title"><%- post.title %></span>
+                </a>
+            </li>
             <% }) %>
         </ul>
         <div class="book-chapters-drawer-footer">
