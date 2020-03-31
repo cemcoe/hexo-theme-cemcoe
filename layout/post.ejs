@@ -5,25 +5,27 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title><%= page.title %> | <%= config.title %></title>
     <meta name="description" content="<%- config.description %>"">
-    <meta name="author" content="<%- config.author %>">
+    <meta name=" author" content="<%- config.author %>">
     <%- favicon_tag('static/imgs/favicon.ico') %>
 
     <%- css('static/css/post.css') %>
     <%- css('static/js/prism/prism.css') %>
-    
+
 </head>
 
 <body>
-
-    <div id="book-nav">
-        <button class="open-chapter">
-            目录
-        </button>
-        <a class="book-info" href="../../index.html">
-            <span class="nameoneline">化学小子的前端实验册</span>
-        </a>
-    </div>
     <article class="post">
+        <div class="book-nav-wrapper">
+            <div id="book-nav">
+                <button class="open-chapter">
+                    目录
+                </button>
+                <a class="book-info" href="/">
+                    <span class="nameoneline">化学小子的前端实验册</span>
+                </a>
+            </div>
+        </div>
+        
         <div class="post-title">
             <h2 class="title"><%= page.title %></h2>
         </div>
@@ -35,14 +37,16 @@
                 <% }) %>
 
                 <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+                <span class="refs"><a href="<%= page.ref %>">refs</a></span>
+                
             </div>
         </div>
         <div class="note-content">
-            <%- page.content %>
             <div class="recommend">
-                <p>> 这里是 <%= config.author %> 连载 [化学小子的前端实验册] 的第 <%= page.order %> 篇，欢迎关注。</p>
                 <p>> 每天一遍提醒自己增强自身抵抗力，多喝热水，注意身体。</p>
-            </div> 
+            </div>
+            
+            <%- page.content %>
         </div>
     </article>
     <!-- 我是章节目录遮罩  -->
@@ -69,6 +73,7 @@
 
 
     </div>
+
     <!-- 111 -->
     <%- js('static/js/index.js') %>
     <%- js('static/js/prism/prism.js') %>
