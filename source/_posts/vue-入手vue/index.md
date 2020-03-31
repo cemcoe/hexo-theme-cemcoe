@@ -1,11 +1,13 @@
 ---
-title: lets-start-vue
-date: 2020-03-27 18:12:37
+title: Vue | 入手Vue
+date: 2020-03-31 22:42:36
 tags: Vue
+ref: https://www.jianshu.com/p/7ac9db17dba1
 order: 1
 ---
-
+Vue 入手笔记
 <!-- more -->
+
 Vue 的介绍，优缺点等概念这里就不瞎掰了。若想了解请直达[官网](https://cn.vuejs.org/index.html)。
 
 在 [CSS 效果 | 轮播图](https://www.jianshu.com/p/9817643f8a6b) 和 [CSS 效果 | tab 选项卡](https://www.jianshu.com/p/fdd58caea73f) 中两个效果中可以提取出一个常见的问题，那就是如何进行元素的双向绑定，原文并没有实现，这是一个普遍的需求点。
